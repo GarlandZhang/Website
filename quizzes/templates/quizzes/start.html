@@ -1,0 +1,10 @@
+{% extends 'personal/header.html' %}
+{% block content %}
+	
+	<h1> <b> {{quiz.quiz_text}} </b> </h1>
+
+	<h3> {{quiz.question_set.count }} questions </h3>
+	
+	<input type="button" class="btn btn-info" value="START" onclick="location.href = '{% url 'quizzes:start' quiz.id %}';"> <!-- button -->
+	
+{% endblock %} 

@@ -1,0 +1,20 @@
+{% extends 'personal/header.html' %}
+{% block content %}
+
+	<h1> {{ question.question_text }} </h1>
+	
+	<form action = "{% url 'quizzes:questionDetails' question.id %}" >
+
+		
+	
+		{% for answer in question.answer_set.all %}
+	
+			<input type = "radio" name = "answer" id = "answer{{ forloop.counter }}" value = "{{ answer.id }}" />
+			<label for="answer{{ forloop.counter }}"> {{ answer.answer_text }} </label> <br />
+	
+		{% endfor %}
+	
+		<input type = "submit" value = "NEXT" /> <!-- button -->
+	
+	</form>
+{% endblock %}

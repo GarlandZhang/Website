@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+	<title> This is a generic template HEADER that can be extended by other pages </title>
+	<meta charset = "utf-8" /> <!-- not sure what this does...-->
+	{% load staticfiles %} <!-- always put this in whenever you reference to a static file -->
+	<link rel='stylesheet' href="{% static 'css/bootstrap.min.css' %}" type = 'text/css' />
+	<meta name="viewport" content = "width=device-width, initial-scale=1.0"> <!-- can resize page; dyanmic and user-friendly-->
+</head>	
+
+	<body>
+
+		<div class="dropdown">
+		  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+			Dropdown
+			<span class="caret"></span>
+		  </button>
+		  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+			<li><a href="#">Action</a></li>
+			<li><a href="#">Another action</a></li>
+			<li><a href="#">Something else here</a></li>
+			<li role="separator" class="divider"></li>
+			<li><a href="#">Separated link</a></li>
+		  </ul>
+		</div>
+
+	</body>
+</html>

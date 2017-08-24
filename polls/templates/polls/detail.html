@@ -1,0 +1,34 @@
+{% extends "personal/header.html" %} 
+{% block content %}
+	<!-- if no question si found, it throws http404-->
+	<h1> {{question.question_text}} </h1>
+
+	{% if error_message %}
+		<p> <strong> {{ error_message }} </strong> </p>
+	{% endif %}
+
+	<form action = "{% url 'polls:vote' question.id %}" method="post">
+		<!-- Whenever you create a form that alters data server-side, use method="post"
+		vs method="get". This tip isn’t specific to Django; it’s just good Web 
+		development practice.-->
+		
+		{% csrf_token %} <!-- security -->
+		
+		{% for choice in question.choice_set.all %}
+			<input type = "radio" name = "choice" id = "choice{{ forloop.counter }}" value = "{{ choice.id }}" />
+			<label for="choice{{ forloop.counter }}"> {{ choice.choice_text }} </label> <br />
+		{% endfor %}
+
+		<input type = "submit" value = "VOTE" /> <!-- button -->
+		
+	</form>
+{% endblock %}
+<!--
+<ul>
+	{% for choice in question.choice_set.all %}
+	
+		<li> {{ choice.choice_text }} </li>
+	
+	{% endfor %}
+</ul>
+-->

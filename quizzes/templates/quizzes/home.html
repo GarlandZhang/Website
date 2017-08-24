@@ -1,0 +1,20 @@
+{% extends 'personal/header.html' %}
+{% block content %}
+	
+	{% if latest_quizzes_list %}
+	
+		<ul>
+			{% for quiz in latest_quizzes_list %}
+		
+				<li><a href="{% url 'quizzes:start' quiz.id %}" >{{quiz.quiz_text}}</a></li>
+		
+			{% endfor %}
+		</ul>
+	
+	{% else %}
+	
+		<p> No quizzes available </p>
+	
+	{% endif %}
+
+{% endblock %}

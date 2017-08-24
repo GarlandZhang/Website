@@ -1,0 +1,10 @@
+{% extends "personal/header.html" %} 
+
+{% block content %}
+		{% for post in object_list %} <!-- loop through all posts; post is the temporary variable for referencing each post -->
+
+			<h5> {{ post.date|date:"Y-m-d" }}<a href ="/blog/{{post.id}}" > {{post.title }} </a> 
+			</h5> <!-- post.id is auto created; format is date, followed by post's title-->
+			
+		{% endfor %}
+{% endblock %}
