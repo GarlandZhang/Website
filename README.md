@@ -1,0 +1,1 @@
+This is an offline website that I made in my spare time using Django framework. Some code has been taken from Django tutorials documents on djangoprojects. Therefore, I do not take full responsibility for creating this website. For now, I am improving the web apps in my spare time and ideally achieve independence from using code from other sources.
